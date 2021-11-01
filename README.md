@@ -21,7 +21,7 @@ Visit [SQL Try Editor at W3Schools.com](https://www.w3schools.com/Sql/trysql.asp
 - Find all customers with postal code 1010. Returns 3 records.
 - Find the phone number for the supplier with the id 11. Should be (010) 9984510.
 - List first 10 orders placed, sorted descending by the order date. The order with date 1997-02-12 should be at the top.
-- Find all customers that live in London, Madrid, or Brazil. Returns 18 records.
+- Find all customers that live in Lonadon, Madrid, or Brazil. Returns 18 records.
 - Add a customer record for _"The Shire"_, the contact name is _"Bilbo Baggins"_ the address is _"1 Hobbit-Hole"_ in _"Bag End"_, postal code _"111"_ and the country is _"Middle Earth"_.
 - Update _Bilbo Baggins_ record so that the postal code changes to _"11122"_.
 
@@ -56,13 +56,13 @@ npm run resetdb
 - Here is a cheatsheet for working with SQLite with Knex:
 
 ```js
-db('foo-table') // returns a promise that resolves to an **array** with all records in the table
-db('foo-table').where({ role: 'Student', active: true }) // resolves to an **array** of all records that satisfy the where
-db('foo-table').where('name', 'Mary') // is an alternative for when there is just one where condition
-db('foo-table').where('id', 7).first() // will resolve to the **record** we want (if the id is unique for a table) or undefined
-db('foo-table').insert({ bar: 'baz' }) // resolves to an **array** containing the **ids of the records** inserted into the table
-db('foo-table').where('id', id).update({ bar: 'new bar' }) // resolves to the **number of records** affected by the update
-db('foo-table').where('id', id).delete() // resolves to the **number of records** affected by the delete
+db("foo-table"); // returns a promise that resolves to an **array** with all records in the table
+db("foo-table").where({ role: "Student", active: true }); // resolves to an **array** of all records that satisfy the where
+db("foo-table").where("name", "Mary"); // is an alternative for when there is just one where condition
+db("foo-table").where("id", 7).first(); // will resolve to the **record** we want (if the id is unique for a table) or undefined
+db("foo-table").insert({ bar: "baz" }); // resolves to an **array** containing the **ids of the records** inserted into the table
+db("foo-table").where("id", id).update({ bar: "new bar" }); // resolves to the **number of records** affected by the update
+db("foo-table").where("id", id).delete(); // resolves to the **number of records** affected by the delete
 ```
 
 #### Write Middleware
@@ -75,7 +75,7 @@ db('foo-table').where('id', id).delete() // resolves to the **number of records*
     - If name is not a string, return `{ message: "name of account must be a string" }`
     - If the _trimmed_ name is shorter than 3 or longer than 100, return `{ message: "name of account must be between 3 and 100" }`
     - If budget is not a number, return `{ message: "budget of account must be a number" }`
-    - If budget is a negative number or over one million, return  `{ message: "budget of account is too large or too small" }`
+    - If budget is a negative number or over one million, return `{ message: "budget of account is too large or too small" }`
 
   - `checkAccountId` returns a status 404 with a `{ message: "account not found" }` if `req.params.id` does not exist in the database
 
